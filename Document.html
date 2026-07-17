@@ -5,15 +5,66 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
-        <link rel="stylesheet" href="./Document_files/style.css">
+        <style>
+                body {
+    text-align: center;
+    font-family: sans-serif;
+}
+
+h1 {
+    color: yellow;
+    font-size: 50px;
+    text-shadow: 2px 2px 2px black;
+}
+
+input {
+    padding: 5px;
+    margin: 20px;
+    width: 400px;
+}
+
+#output {
+    font-size: 36px;
+    color: white;
+    text-shadow: 2px 2px 2px black;
+    height: 350px;
+    width: 500px;
+    background-image: url("spongebob_meme_64.webp");
+    background-size: cover;
+    background-position: center;
+    margin: auto;
+}
+
+        </style>
     </head>
     <body>
         <h1>Meme Writer</h1>
         <input type="text" placeholder="Type in the meme you want to memeify.">
         <button onclick="convertText()">CreATe MEmE</button>
         <div id="output">YgIG</div>
-        <script src="./Document_files/script.js.download"></script>
-    <script defer="" src="./Document_files/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;3c035defe3da4d3caf8b0a246f6f5ea8&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+        <script>
+                let inputEl = document.querySelector("input");
+let outputEl = document.querySelector("#output");
 
+function convertText() {
+    let inputString = inputEl.value;
+    let inputArray = inputString.split("");
+    let outputArray = [];
+
+    for (let i = 0; i < inputArray.length; i++) {
+        let letter = inputArray[i];
+
+        let randomNum = Math.random();
+
+        if (randomNum < 0.5) {
+            outputArray.push(letter.toUpperCase());
+        } else {
+            outputArray.push(letter);
+        }
+    }
+    outputEl.innerHTML = outputArray.join("");
+}
+
+        </script>
 
 </body></html>
